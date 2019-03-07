@@ -1,0 +1,10 @@
+﻿
+@model OrganoPlenoApp.Models.Organ
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="col-md-2 column productbox">
+    <img src="http://placehold.it/460x250/262d37/ffffff&text=@Model.Name" class="img-responsive">
+    <div class="producttitle">@Model.Name</div>
+    <div class="productprice"><div class="pull-right"><a href="/Organs/Details/@Model.ID" class="btn btn-danger btn-sm" role="button">Detail</a></div><div class="pricetext">@Model.Name</div></div>
+</div>

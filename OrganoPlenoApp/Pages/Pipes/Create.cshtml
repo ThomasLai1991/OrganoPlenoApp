@@ -1,0 +1,70 @@
+﻿@page
+@model OrganoPlenoApp.Pages.Pipes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pipe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <p>Enter a 4 digit ID, the First digit represent the category, example: 2056,3001</p>
+                <label asp-for="Pipe.ID" class="control-label"></label>
+                <input asp-for="Pipe.ID" class="form-control" />
+                <span asp-validation-for="Pipe.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Name" class="control-label"></label>
+                <input asp-for="Pipe.Name" class="form-control" />
+                <span asp-validation-for="Pipe.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Category" class="control-label"></label>
+                @Html.DropDownList("Pipe.Category", Html.GetEnumSelectList(typeof(Models.PipeEnumProperties.Category)), "Please elect Category", new { @class = "form-control" })
+                <span asp-validation-for="Pipe.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Specification" class="control-label"></label>
+                @Html.DropDownList("Pipe.Specification", Html.GetEnumSelectList(typeof(Models.PipeEnumProperties.Specification)), "Please select specification", new { @class = "form-control" })
+                <span asp-validation-for="Pipe.Specification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Material" class="control-label"></label>
+                @Html.DropDownList("Pipe.Material", Html.GetEnumSelectList(typeof(Models.PipeEnumProperties.Material)), "Please select Material", new { @class = "form-control" })
+                <span asp-validation-for="Pipe.Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Price" class="control-label"></label>
+                <input asp-for="Pipe.Price" class="form-control" />
+                <span asp-validation-for="Pipe.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Year" class="control-label"></label>
+                <input asp-for="Pipe.Year" class="form-control" />
+                <span asp-validation-for="Pipe.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pipe.Division.Name" class="control-label"></label>
+                @Html.DropDownList("Pipe.DivisionID", ViewBag.DivisionID, "Please select a Division", new { @class = "form-control" })
+                <span asp-validation-for="Pipe.DivisionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

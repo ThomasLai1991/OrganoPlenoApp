@@ -1,0 +1,36 @@
+﻿@page
+@{
+    ViewData["Title"] = "Organ Map";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<p>Organs around us.</p>
+<iframe src="https://www.google.com/maps/d/embed?mid=1Wt3BHua8-3YrBiGi4oWC8lDcipHBbjIV"  style="width:885px;height:500px" ></iframe>
+
+
+
+
+<p class="m-5">Where I practise (using google map API and java script)</p>
+<div id="map" style="width:885px;height:500px"></div>
+<script>
+    function initMap() {
+        var myLatLng = { lat: -36.854360, lng: 174.768180 };
+
+        // Create a map object and specify the DOM element
+        // for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 15
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+            map: map,
+            position: myLatLng,
+            title: 'Where I practise!'
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy_sPDMtu6dyiRpZRqWSqnNgn5sYsYfFU&callback=initMap"
+        async defer></script>

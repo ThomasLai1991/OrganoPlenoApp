@@ -1,0 +1,111 @@
+﻿@page
+@model OrganoPlenoApp.Pages.Pipes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Name or Division: <input type="text" name="searchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-default" />
+            <a asp-page="./Index">Back to Full List</a>
+        </p>
+        <hr />
+        <h3>Result Number Per Page</h3> <br />
+        <input type="submit" name="pageSize" value="5" />
+        <input type="submit" name="pageSize" value="10" />
+        <input type="submit" name="pageSize" value="15" />
+        <hr />
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSortParm" asp-route-currentFilter="@Model.CurrentFilter">@Html.DisplayNameFor(model => model.Pipe[0].Name)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pipe[0].Category)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SpecificationSortParm" asp-route-currentFilter="@Model.CurrentFilter">@Html.DisplayNameFor(model => model.Pipe[0].Specification)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pipe[0].Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pipe[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pipe[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pipe[0].Division.Name)
+            </th>
+            <th>
+                Organ
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pipe)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division.Organ.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.Pipe.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Pipe.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSortType"
+   asp-route-pageIndex="@(Model.Pipe.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-default @prevDisabled">Previous</a>
+
+<a asp-page="./Index" 
+asp-route-sortOrder="@Model.CurrentSortType" 
+asp-route-pageIndex="@(Model.Pipe.PageIndex + 1)" 
+asp-route-currentFilter="@Model.CurrentFilter" 
+class="btn @nextDisabled">Next</a>

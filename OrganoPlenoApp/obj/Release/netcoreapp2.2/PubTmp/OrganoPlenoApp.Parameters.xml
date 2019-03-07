@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="OrganoPlenoAppV1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\visual\ studio\ projects\\Azure\\OrganoPlenoApp\\OrganoPlenoApp\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="OrganoPlenoApp.Data.ApplicationDbContext" description="" value="Data Source=tcp:organoplenoappv1dbserver.database.windows.net,1433;Initial Catalog=OrganoPlenoAppV1_db;User Id=thomasadam1991@gmail.com@organoplenoappv1dbserver;Password=Asdaal@123" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\visual\ studio\ projects\\Azure\\OrganoPlenoApp\\OrganoPlenoApp\\obj\\Release\\netcoreapp2\.2\\PubTmp\\EFSQLScripts\\OrganoPlenoApp\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
+  <parameter name="OrganoPlenoApp.Models.OrganContext" description="" value="Data Source=tcp:organoplenoappv1dbserver.database.windows.net,1433;Initial Catalog=OrganoPlenoAppV1_db;User Id=thomasadam1991@gmail.com@organoplenoappv1dbserver;Password=Asdaal@123" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\visual\ studio\ projects\\Azure\\OrganoPlenoApp\\OrganoPlenoApp\\obj\\Release\\netcoreapp2\.2\\PubTmp\\EFSQLScripts\\OrganoPlenoApp\.Models\.OrganContext\.sql$" />
+  </parameter>
+</parameters>

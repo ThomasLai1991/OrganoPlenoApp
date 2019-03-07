@@ -1,0 +1,40 @@
+﻿@page
+@model OrganoPlenoApp.Pages.Divisions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Division</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Division.Name" class="control-label"></label>
+                <input asp-for="Division.Name" class="form-control" />
+                <span asp-validation-for="Division.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Division.Organ" class="control-label"></label>
+                @Html.DropDownList("Division.OrganID", ViewBag.OrganID, "Please select an Organ", new { @class = "form-control" })
+
+                @*<select asp-for="Division.OrganID" class ="form-control" asp-items="ViewBag.OrganID"></select>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

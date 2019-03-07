@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\PubTmp\Out\" />
+  <dbfullsql path="E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\PubTmp\EFSQLScripts\OrganoPlenoApp.Data.ApplicationDbContext.sql" />
+  <dbfullsql path="E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\PubTmp\EFSQLScripts\OrganoPlenoApp.Models.OrganContext.sql" />
+</sitemanifest>
