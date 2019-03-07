@@ -12,7 +12,7 @@
     <WebStackScaffolding_DbContextTypeFullName>OrganoPlenoApp.Models.OrganContext</WebStackScaffolding_DbContextTypeFullName>
     <ShowAllFiles>false</ShowAllFiles>
     <ActiveDebugProfile>OrganoPlenoApp</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>OrganoPlenoAppV1 - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>OrganoPlenoApp - Web Deploy</NameOfLastUsedPublishProfile>
     <RazorPage_SelectedScaffolderID>Microsoft.AspNet.Scaffolding.Mvc.RazorPageScaffolder</RazorPage_SelectedScaffolderID>
     <RazorPage_SelectedScaffolderCategoryPath>root/RazorPage</RazorPage_SelectedScaffolderCategoryPath>
   </PropertyGroup>

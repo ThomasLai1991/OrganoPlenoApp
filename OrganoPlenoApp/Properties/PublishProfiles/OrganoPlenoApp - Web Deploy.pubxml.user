@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9OvT0b53k0avfj/UPm7v7gAAAAACAAAAAAAQZgAAAAEAACAAAAABPyEwrArMMaQeViVZBWQlXogCmgqBEfQyMw2Gd9EtXgAAAAAOgAAAAAIAACAAAADJfoqpX5ADCEvWWmCiz3ruQUAUM/d3JeSHeYaOOI8TQIAAAAA3wj5TPoW7aiN5QHXLQ/Uo9LL3LtvuAnwbNT/OW1+WAGjFRM9yKiRLTBhGTTx7g+wCyQJu5MENZ2FpxdCiacnAe7hRBz75ZY0EFUxHiRJBbeG4vLSY5exRVEt+Qjp7M1CEu5qRttx6QCwhJ8JTPfHABt/uLOE6jAHmk2c+Wn+CmEAAAAC0TAgRxZq3RUz44HPLCERThUAt8f3gOEHAogCyeUQQMO3oghozygVUSij/EQya1+uB7Pbwor6oUo/tEIGSJkZo</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="OrganContext">
+      <Value>Data Source=tcp:organoplenoapp20190307041528dbserver.database.windows.net,1433%3bInitial Catalog=OrganoPlenoApp20190307041528_db%3bUser Id=thomasadam1991%40gmail.com%40organoplenoapp20190307041528dbserver%3bPassword=Asdaal%40123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="OrganoPlenoApp.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:organoplenoapp20190307041528dbserver.database.windows.net,1433%3bInitial Catalog=OrganoPlenoApp20190307041528_db%3bUser Id=thomasadam1991%40gmail.com%40organoplenoapp20190307041528dbserver%3bPassword=Asdaal%40123</Value>
+    </EFMigrations>
+    <EFMigrations Include="OrganoPlenoApp.Models.OrganContext">
+      <Value>Data Source=tcp:organoplenoapp20190307041528dbserver.database.windows.net,1433%3bInitial Catalog=OrganoPlenoApp20190307041528_db%3bUser Id=thomasadam1991%40gmail.com%40organoplenoapp20190307041528dbserver%3bPassword=Asdaal%40123</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
