@@ -1,2 +1,3 @@
 
 .vs/OrganoPlenoApp/v15/Server/sqlite3/storage.ide-wal
+*.ide-wal
