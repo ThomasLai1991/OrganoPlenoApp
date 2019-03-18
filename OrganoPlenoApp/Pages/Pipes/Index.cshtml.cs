@@ -107,6 +107,7 @@ namespace OrganoPlenoApp.Pages.Pipes
 
             }
 
+            //use temData to store the pageSize setting between pages
             if (pageSize != null)
             {
                 TempData["PageSize"] = pageSize;
@@ -117,7 +118,7 @@ namespace OrganoPlenoApp.Pages.Pipes
             }
             TempData.Keep();
 
-
+            //populate the display results
             Pipe= await PaginatedList<Pipe>.CreateAsync(pipes.AsNoTracking(), pageIndex ?? 1, (int)TempData["PageSize"]);
 
             //Pipe = await _context.Pipe

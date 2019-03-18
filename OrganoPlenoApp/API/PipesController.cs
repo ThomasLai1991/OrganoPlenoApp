@@ -31,7 +31,7 @@ namespace OrganoPlenoApp.API
             //switch case
             switch (isEnum)
             {
-                //if parse successfully, then list all pipes which belongs to that category
+                //if TryParse successfully, then list all pipes which belongs to that category
                 case true:
                     return await _context.Pipe.Where(p => p.Category==cate).ToListAsync();
                     //if not successful, then

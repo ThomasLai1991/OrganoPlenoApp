@@ -22,20 +22,19 @@ namespace OrganoPlenoApp.Pages.Pipes
 
         public IActionResult OnGet()
         {
-           
-  
-
             PopulateDivisionDropDownList();
             return Page();
         }
 
         private void PopulateDivisionDropDownList(object selectedDivision = null)
         {
+            //load the organ table then orderBy ID and create an object for dropdownlist display purpose
             var divisions = _context.Division.Include(d => d.Organ).OrderBy(s => s.OrganID).Select(s => new
             {
                 divisionID = s.ID,
                 description = String.Format("{0}   \xA0 \xA0\xA0     |{1}", s.Organ.Name, s.Name)
             }).ToList();
+            //save dropdownlist into ViewData
             ViewData["DivisionID"] = new SelectList(divisions, "divisionID", "description", selectedDivision);
         }
 

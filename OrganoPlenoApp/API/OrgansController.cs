@@ -24,6 +24,7 @@ namespace OrganoPlenoApp.API
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Organ>>> GetOrgan(string name="")
         {
+            //take in name parameter
             switch (name)
             {
                 //sort by name ascending order
