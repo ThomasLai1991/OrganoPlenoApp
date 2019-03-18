@@ -11,29 +11,42 @@ namespace OrganoPlenoApp.API
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrgansAPIController : ControllerBase
+    public class OrgansController : ControllerBase
     {
         private readonly OrganContext _context;
 
-        public OrgansAPIController(OrganContext context)
+        public OrgansController(OrganContext context)
         {
             _context = context;
         }
 
-        // GET: api/OrgansAPI
+        // GET: api/Organs
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Organ>>> GetOrgan()
+        public async Task<ActionResult<IEnumerable<Organ>>> GetOrgan(string name="")
         {
-            return await _context.Organ.ToListAsync();
+            switch (name)
+            {
+                //sort by name ascending order
+                case "asc":
+                    return await _context.Organ.OrderBy(o => o.Name).ToListAsync();
+                //sort by name descending order
+                case "des":
+                    return await _context.Organ.OrderByDescending(o => o.Name).ToListAsync();
+                //no input from name, show all results
+                case "":
+                    return await _context.Organ.ToListAsync();
+                 //default case, search for an organ with specific name
+                default:
+                    return await _context.Organ.Where(o=>o.Name==name).ToListAsync();
+
+            }
         }
 
-        // GET: api/OrgansAPI/5
+        // GET: api/Organs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Organ>> GetOrgan(int id)
         {
-            var organ = await _context.Organ.FindAsync(id);    
-            //Below line load the divisions
-            //.Include(o=>o.Divisions).SingleOrDefaultAsync(o=>o.ID==id);
+            var organ = await _context.Organ.FindAsync(id);
 
             if (organ == null)
             {
@@ -43,7 +56,7 @@ namespace OrganoPlenoApp.API
             return organ;
         }
 
-        // PUT: api/OrgansAPI/5
+        // PUT: api/Organs/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrgan(int id, Organ organ)
         {
@@ -73,7 +86,7 @@ namespace OrganoPlenoApp.API
             return NoContent();
         }
 
-        // POST: api/OrgansAPI
+        // POST: api/Organs
         [HttpPost]
         public async Task<ActionResult<Organ>> PostOrgan(Organ organ)
         {
@@ -83,7 +96,7 @@ namespace OrganoPlenoApp.API
             return CreatedAtAction("GetOrgan", new { id = organ.ID }, organ);
         }
 
-        // DELETE: api/OrgansAPI/5
+        // DELETE: api/Organs/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Organ>> DeleteOrgan(int id)
         {
