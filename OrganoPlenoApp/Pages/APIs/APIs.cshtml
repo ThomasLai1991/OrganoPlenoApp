@@ -54,11 +54,11 @@
                     <td>GET(list)</td>
                     <td>api/Organs/</td>
                     <td>api/Divisions/</td>
-                    <td>api/Pipes/{id}</td>
+                    <td>api/Pipes/</td>
                 </tr>
                 <tr>
                     <td>GET(query)</td>
-                    <td>?order=asc/des/{name} (sort by name order or seach by name) </td>
+                    <td>?name=asc/des/{name} (sort by name order or seach by name) </td>
                     <td>?organID={id}(search by organ id)</td>
                     <td>?category={category}(search by category, case insensitive)</td>
                 </tr>
@@ -90,8 +90,9 @@
         </table>
     </div>
 
-    <p>For example, if you type http://OrganoPlenoApp.azurewebsite.net/api/Organs?order=asc <br />
-    You will receive a list of organ entities in JSON 
+    <p>
+        For example, if you type "https://organoplenoapp.azurewebsites.net/api/organs?name=asc" into browser address bar<br />
+        You will receive a list of organ entities in JSON ordered ascendingly by their names
     </p>
 
 

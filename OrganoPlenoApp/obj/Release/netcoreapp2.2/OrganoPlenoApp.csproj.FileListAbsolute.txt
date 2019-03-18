@@ -47,3 +47,4 @@ E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcor
 E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\Razor\Pages\Masters.g.cshtml.cs
 E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\Razor\Pages\OrganMap.g.cshtml.cs
 E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\Razor\Pages\PartialViews\OrganPartial.g.cshtml.cs
+E:\visual studio projects\Azure\OrganoPlenoApp\OrganoPlenoApp\obj\Release\netcoreapp2.2\Razor\Pages\APIs\APIs.g.cshtml.cs
