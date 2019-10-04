@@ -29,7 +29,6 @@ namespace OrganoPlenoApp.Pages.Pipes
         public PaginatedList<Pipe> Pipe { get;set; }
 
         public async Task OnGetAsync(            
-            
             //denote the ordering type
             string sortOrder,
             //accept new search string, and if any, reset page index to 1
